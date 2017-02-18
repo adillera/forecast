@@ -7,10 +7,25 @@ body {
   min-height: 100vh;
   padding-left: 0;
 
-  .section {
-    padding-left: 0.75em;
-    background-color: #ffffff;
-    margin-top: 9px;
+  .collection {
+    border: 0;
+
+    a.collection-item {
+      color: #077bed;
+      text-transform: uppercase;
+
+      i {
+        margin-right: 10px;
+        display: inline;
+        vertical-align: middle;
+      }
+    }
+
+    a.collection-item:not(.active):hover,
+    a.collection-item.active {
+      background-color: #077bed;
+      color: #ffffff;
+    }
   }
 
   #header {

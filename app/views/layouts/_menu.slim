@@ -1,2 +1,8 @@
-.section
-  h5 Main Menu
+.collection
+  = link_to categories_path, class: 'collection-item' do
+    i.material-icons work
+    | Categories
+
+  = link_to transactions_path, class: 'collection-item' do
+    i.material-icons input
+    | Transactions
