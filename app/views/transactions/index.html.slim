@@ -1,2 +1,18 @@
-h1 Transactions#index
-p Find me in app/views/transactions/index.html.slim
+h3.content-header Transactions
+
+.content
+  .right-align
+    = link_to new_transaction_path, class: 'btn' do
+      i.material-icons add_circle_outline
+      | New Transaction
+
+  table.bordered.striped
+    thead
+      tr
+        th.actions Actions
+        th Name
+    tbody
+      /= render @categories
+
+.center-align
+  /= paginate @categories

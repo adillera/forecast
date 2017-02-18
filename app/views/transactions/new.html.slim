@@ -1,2 +1,28 @@
-h1 Transactions#new
-p Find me in app/views/transactions/new.html.slim
+h3.content-header Transactions
+h5.sub-header Add New Transaction
+
+.row
+  .col.s5
+    = form_for @transaction do |f|
+      .input-field
+        = f.select(:flow, options_for_select(options_for_flow))
+        = f.label :flow
+
+      .input-field
+        = f.label :item
+        = f.text_field :item
+
+      .input-field
+        = f.label :amount
+        = f.text_field :amount
+
+      .input-field
+        = f.select(:repeat, options_for_select(options_for_repeat), {}, { class: 'repetition-dropdown' })
+        = f.label :repeat
+
+      .input-field.datepicker-container
+        = f.date_field :single_occurrence, class: 'datepicker'
+        = f.label :single_occurrence
+
+      .right-align
+        = f.submit class: 'btn'
