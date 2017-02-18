@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all.page(params[:page])
+    @categories = current_user.categories.page(params[:page])
   end
 
   def new
