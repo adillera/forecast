@@ -1,4 +1,8 @@
 tr
   td = prediction.keys.first
   td = prediction.values.first
-  td test
+  td
+    - if prediction.values.first < 0
+      i.material-icons.negative-amount thumb_down
+    - else
+      i.material-icons.positive-amount thumb_up
