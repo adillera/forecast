@@ -12,5 +12,15 @@ html
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'
 
   body
-    .container
+    - if user_signed_in?
+      .nav-bar
+        | Nav here
+
+      .row
+        .col.s3#main-menu
+          | menu here
+
+        .col.s9
+          = yield
+    - else
       = yield
