@@ -3,7 +3,7 @@ class ForecastsController < ApplicationController
 
   def index
     cassandra = Cassandra.new(current_user, permitted_params)
-    @predictions = cassandra.predict
+    @predictions = Kaminari.paginate_array(cassandra.predict).page(params[:page])
     @start_date = params[:start_date]
     @end_date = params[:end_date]
   end
