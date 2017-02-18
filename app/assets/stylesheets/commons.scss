@@ -1,7 +1,26 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f9f9f9;
+
+  .btn, .btn-large {
+    background-color: #077bed;
+
+    i {
+      margin-right: 10px;
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+
+  .btn:hover, .btn-large:hover {
+    background-color: #1b8af8;
+  }
+
+  .btn:focus, .btn-large:focus, .btn-floating:focus {
+    background-color: #066bd0;
+  }
 }
+
 
 #main-menu {
   min-height: 100vh;
@@ -51,5 +70,10 @@ body {
     margin: 0;
     padding: 35px 15px;
     color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .add-new {
+    padding-right: .75em;
   }
 }
