@@ -11,9 +11,10 @@ h3.content-header Sign Up
 
       .input-field
         = f.label :password
+        = f.password_field :password, autocomplete: 'off'
+
         - if @minimum_password_length
           em = "(#{ @minimum_password_length } characters minimum)"
-        = f.password_field :password, autocomplete: 'off'
 
       .input-field
         = f.label :password_confirmation

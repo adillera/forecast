@@ -7,6 +7,10 @@
     i.material-icons input
     | Transactions
 
+  = link_to edit_user_registration_path, class: 'collection-item' do
+    i.material-icons settings
+    | My Details
+
   = link_to destroy_user_session_path, class: 'collection-item', method: :delete do
     i.material-icons cancel
     | Logout
