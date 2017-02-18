@@ -24,5 +24,9 @@ h5.sub-header Add New Transaction
         = f.date_field :single_occurrence, class: 'datepicker'
         = f.label :single_occurrence
 
+      .input-field
+        = f.select(:category_id, options_from_collection_for_select(@categories, :id, :name), include_blank: 'Not Categorized')
+        = f.label :category
+
       .right-align
         = f.submit class: 'btn'
