@@ -1,8 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-  end
-
-  def show
+    @categories = Category.all.page(params[:page])
   end
 
   def new
@@ -19,13 +17,12 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
+    category = Category.find(params[:id])
+
+    category.destroy
+
+    redirect_to categories_path
   end
 
   private
