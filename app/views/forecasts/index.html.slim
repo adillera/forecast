@@ -16,3 +16,12 @@ h3.content-header Forecast
           = button_tag type: 'submit', class: 'btn forecast-button' do
             i.material-icons visibility
             | Forecast
+
+  table.bordered
+    thead
+      tr
+        th Date
+        th Money
+        th Status
+    tbody
+      = render partial: 'prediction', collection: @predictions

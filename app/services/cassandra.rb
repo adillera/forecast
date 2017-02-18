@@ -9,7 +9,7 @@ class Cassandra
   end
 
   def predict
-    date_range.inject({}) do |ini, date|
+    date_range.inject([]) do |ini, date|
       start_of_month = date.beginning_of_month
       end_of_month = date.end_of_month
       quarter = (date.beginning_of_year + 3.months).end_of_month
@@ -37,9 +37,8 @@ class Cassandra
       end
 
       key = date.strftime('%d %B, %Y')
-      ini[key] = @my_money
 
-      ini
+      ini << { "#{ key }" => @my_money }
     end
   end
 
