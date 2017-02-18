@@ -3,6 +3,8 @@ body {
   background-color: #f9f9f9;
 
   .btn, .btn-large {
+    padding: 0 15px;
+    border-radius: 3px;
     background-color: #077bed;
 
     i {
@@ -66,7 +68,7 @@ body {
   background-color: #ffffff;
 
   .content-header {
-    background-color: #ffc000;
+    background-color: #07edbd;
     margin: 0;
     padding: 35px 15px;
     color: #ffffff;
@@ -87,5 +89,13 @@ table {
   .actions {
     width: 15%;
     text-align: center;
+
+    a {
+      margin: 0 15px;
+    }
   }
+}
+
+.add_new_button {
+  margin-bottom: 15px;
 }

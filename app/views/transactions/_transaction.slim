@@ -1,0 +1,19 @@
+tr
+  td.actions
+    = link_to edit_transaction_path(transaction) do
+      i.material-icons redo
+
+    = link_to transaction_path(transaction), method: :delete do
+      i.material-icons clear
+  td
+    = transaction.item
+  td
+    = transaction.amount
+  td
+    = transaction.flow.upcase
+  td
+    = transaction.repeat.upcase
+  td
+    = transaction.single_occurrence || '-'
+  td
+    = transaction.category.try(:name) || '-'
