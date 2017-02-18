@@ -1,8 +1,8 @@
 module TransactionsHelper
   def options_for_flow
     [
-      ['Credit', 'credit'],
-      ['Debit', 'debit']
+      ['Debit', 'debit'],
+      ['Credit', 'credit']
     ]
   end
 
