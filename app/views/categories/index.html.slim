@@ -1,0 +1,18 @@
+h3.content-header Categories
+
+.content
+  .right-align
+    = link_to new_category_path, class: 'btn' do
+      i.material-icons add_circle_outline
+      | New Category
+
+  table.bordered.striped
+    thead
+      tr
+        th.actions Actions
+        th Name
+    tbody
+      = render @categories
+
+.center-align
+  = paginate @categories

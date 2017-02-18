@@ -1,0 +1,12 @@
+h3.content-header Categories
+h5.sub-header Add New Category
+
+.row
+  .col.s5
+    = form_for @category do |f|
+      .input-field
+        = f.label :name
+        = f.text_field :name
+
+      .right-align
+        = f.submit class: 'btn'
