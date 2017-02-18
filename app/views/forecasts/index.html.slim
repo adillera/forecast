@@ -1,2 +1,18 @@
-h1 Forecasts#index
-p Find me in app/views/forecasts/index.html.slim
+h3.content-header Forecast
+
+.content
+  .row
+    = form_tag forecasts_path, method: :get, class: 'col s12'
+      .row
+        .input-field.col.s5
+          = label_tag :start_date
+          = text_field_tag :start_date, @start_date, class: 'start-date-picker'
+
+        .input-field.col.s5
+          = label_tag :end_date
+          = text_field_tag :end_date, @end_date, class: 'end-date-picker'
+
+        .col.s2
+          = button_tag type: 'submit', class: 'btn forecast-button' do
+            i.material-icons visibility
+            | Forecast
