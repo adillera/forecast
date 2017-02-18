@@ -9,9 +9,6 @@ html
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto', media: 'all'
     = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css', media: 'all'
 
-    = javascript_include_tag 'application'
-    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'
-
   body
     - if user_signed_in?
       .row
@@ -26,3 +23,6 @@ html
     - else
       .container#main-content
         = yield
+
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'
