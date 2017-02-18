@@ -8,12 +8,19 @@ $ ->
     selectYears: 15
   )
 
-  $('select.repetition-dropdown').change ->
-    elem = $(@)
-
+  checkRepetitionDropdown = (elem) ->
     if elem.val() != 'single'
       $('.datepicker-container').hide()
       $('.datepicker').pickadate('clear')
     else
       $('.datepicker-container').show()
-      $('.datepicker').pickadate('clear')
+
+  $('select.repetition-dropdown').change ->
+    elem = $(@)
+
+    checkRepetitionDropdown(elem)
+
+  # Need to do this in case of editing a transaction
+  repetitionElem = $('select.repetition-dropdown')
+
+  checkRepetitionDropdown(repetitionElem)

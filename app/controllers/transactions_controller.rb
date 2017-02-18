@@ -7,8 +7,8 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @categories = current_user.categories
     @transaction = current_user.transactions.new
+    @categories = current_user.categories
   end
 
   def create
@@ -22,9 +22,18 @@ class TransactionsController < ApplicationController
   end
 
   def edit
+    @transaction = current_user.transactions.find(params[:id])
+    @categories = current_user.categories
   end
 
   def update
+    transaction = current_user.transactions.find(params[:id])
+
+    if transaction.update(permitted_params)
+      redirect_to transactions_path
+    else
+      redirect_to edit_transaction_path(transaction)
+    end
   end
 
   def destroy
@@ -32,7 +41,6 @@ class TransactionsController < ApplicationController
 
   private
   def permitted_params
-    params[:transaction] = params[:transaction].reject{ |k, v| v.blank? }
     params[:transaction][:amount] = BigDecimal.new(params[:transaction][:amount].to_s)
 
     params.require(:transaction).permit(
