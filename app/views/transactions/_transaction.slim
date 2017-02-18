@@ -6,4 +6,10 @@ tr
   td
     = transaction.amount
   td
-    = transaction.flow
+    = transaction.flow.upcase
+  td
+    = transaction.repeat.upcase
+  td
+    = transaction.single_occurrence || '-'
+  td
+    = transaction.category.try(:name) || '-'
