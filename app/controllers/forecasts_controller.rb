@@ -18,7 +18,7 @@ class ForecastsController < ApplicationController
 
   def get_dates
     if params[:start_date].blank? || params[:end_date].blank?
-      params[:start_date] = Date.today.beginning_of_month.strftime('%d %B, %Y')
+      params[:start_date] = current_user.updated_at.strftime('%d %B, %Y')
       params[:end_date] = Date.today.end_of_month.strftime('%d %B, %Y')
     end
   end
