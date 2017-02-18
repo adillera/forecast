@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   def index
+    @transactions = current_user.transactions.page(params[:page])
   end
 
   def show
@@ -32,6 +33,7 @@ class TransactionsController < ApplicationController
   private
   def permitted_params
     params[:transaction] = params[:transaction].reject{ |k, v| v.blank? }
+    params[:transaction][:amount] = BigDecimal.new(params[:transaction][:amount].to_s)
 
     params.require(:transaction).permit(
       :flow,

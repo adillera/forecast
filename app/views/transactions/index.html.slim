@@ -10,9 +10,11 @@ h3.content-header Transactions
     thead
       tr
         th.actions Actions
-        th Name
+        th Item
+        th Amount
+        th Flow
     tbody
-      /= render @categories
+      = render @transactions
 
 .center-align
-  /= paginate @categories
+  = paginate @transactions
