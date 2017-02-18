@@ -31,6 +31,10 @@ h3.content-header
         = f.password_field :password_confirmation, autocomplete: 'off'
 
       .input-field
+        = f.label :initial_amount
+        = f.text_field :initial_amount, autofocus: true
+
+      .input-field
         = f.label :current_password
           | Current Password (we need this to confirm your changes)
 
