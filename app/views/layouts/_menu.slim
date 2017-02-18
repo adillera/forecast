@@ -6,3 +6,7 @@
   = link_to transactions_path, class: 'collection-item' do
     i.material-icons input
     | Transactions
+
+  = link_to destroy_user_session_path, class: 'collection-item', method: :delete do
+    i.material-icons cancel
+    | Logout
