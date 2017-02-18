@@ -1,6 +1,10 @@
 tr
   td.actions
-    |something here
+    = link_to edit_transaction_path(transaction) do
+      i.material-icons redo
+
+    = link_to transaction_path(transaction), method: :delete do
+      i.material-icons clear
   td
     = transaction.item
   td
