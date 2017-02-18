@@ -42,5 +42,14 @@ body {
 }
 
 #main-content {
+  min-height: 100vh;
+  padding: 0;
   background-color: #ffffff;
+
+  .content-header {
+    background-color: #ffc000;
+    margin: 0;
+    padding: 35px 15px;
+    color: #ffffff;
+  }
 }
