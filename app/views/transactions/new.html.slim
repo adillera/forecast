@@ -2,7 +2,7 @@ h3.content-header Transactions
 h5.sub-header Add New Transaction
 
 .row
-  .col.s5
+  .col.s6.offset-s3
     = form_for @transaction do |f|
       .input-field
         = f.select(:flow, options_for_select(options_for_flow))
