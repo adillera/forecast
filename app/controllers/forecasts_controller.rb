@@ -4,7 +4,6 @@ class ForecastsController < ApplicationController
   def index
     cassandra = Cassandra.new(current_user, permitted_params)
     @predictions = Kaminari.paginate_array(cassandra.predict).page(params[:page])
-    @start_date = params[:start_date]
     @end_date = params[:end_date]
   end
 
@@ -18,7 +17,7 @@ class ForecastsController < ApplicationController
 
   def get_dates
     if params[:start_date].blank? || params[:end_date].blank?
-      params[:start_date] = current_user.updated_at.strftime('%d %B, %Y')
+      params[:start_date] = current_user.transactions.order(:created_at).first.created_at.strftime('%d %B, %Y')
       params[:end_date] = Date.today.end_of_month.strftime('%d %B, %Y')
     end
   end
