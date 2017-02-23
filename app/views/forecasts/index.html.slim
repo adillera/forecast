@@ -5,10 +5,6 @@ h3.content-header Forecast
     = form_tag forecasts_path, method: :get, class: 'col s12'
       .row
         .input-field.col.s5
-          = label_tag :start_date
-          = text_field_tag :start_date, @start_date, class: 'start-date-picker'
-
-        .input-field.col.s5
           = label_tag :end_date
           = text_field_tag :end_date, @end_date, class: 'end-date-picker'
 
